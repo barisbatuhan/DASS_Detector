@@ -143,7 +143,7 @@ Models                                                 | Manga109 | DCM772 | Com
 4. Filter out the WIDER FACE images that have people that have face side lengths smaller than 1/60 of the minimum side length of the image. Filtered file paths can be found [here](datasets/widerface_diltered_1-60.txt).
 5. From the [Base Experiment file](yolox/exp/base_exp.py), set the correct paths for `wf_train_imgs, wf_test_imgs, wf_train_labels, wf_test_labels` keys in the `self.face_data_dir` and `coco` key in the `self.body_data_dir`.
 
-### Steps for Training:
+#### Steps for Training:
 
 
 1. Set augmentation-specific hyper-parameters and epoch count from [Styled Experiment file](yolox/exp/styled_exp.py) or leave them as default.
@@ -166,12 +166,12 @@ Models                                                 | Manga109 | DCM772 | Com
 - [Manga 109](http://www.manga109.org/en/)
 - [Comic 2k / Watercolor 2k / Clipart 1k](https://github.com/naoto0804/cross-domain-detection)
 
-### Steps for Dataset Preparation:
+#### Steps for Dataset Preparation:
 
 1. Download all the datasets and leave the file format as it is already.
 2. From the [Base Experiment file](yolox/exp/base_exp.py), set the correct paths for `icf_train_imgs, icf_test_imgs, icf_train_labels, icf_test_labels, m109, golden_pages, comic, watercolor, clipart` keys in the `self.face_data_dir` and `self.body_data_dir`.
 
-### Steps for Training:
+#### Steps for Training:
 
 1. Set augmentation-specific and other hyper-parameters from [Unsupervised Experiment file](yolox/exp/unsupervised_exp.py) or leave them as default.
 
@@ -193,7 +193,7 @@ Models                                                 | Manga109 | DCM772 | Com
 - [Manga 109](http://www.manga109.org/en/)
 - [Comic 2k / Watercolor 2k / Clipart 1k](https://github.com/naoto0804/cross-domain-detection)
 
-### Steps for Dataset Preparation:
+#### Steps for Dataset Preparation:
 
 1. Download all the datasets and leave the file format as it is already.
 2. To increase the sizes of the datasets, we divided Manga 109 and DCM 772 pages to individual panels. We only selected the panels having at least one character. So, process these two datasets for separating the panel images and save the modified annotations. 
@@ -228,7 +228,7 @@ Models                                                 | Manga109 | DCM772 | Com
 
 5. From the [Base Experiment file](yolox/exp/base_exp.py), set the correct paths for `icf_train_imgs, icf_test_imgs, icf_train_labels, icf_test_labels, m109_frames_imgs, m109_frames_labels, dcm772_frames_imgs, dcm772_frames_labels, dcm772_frames_partition, comic, watercolor, clipart` keys in the `self.face_data_dir` and `self.body_data_dir`.
 
-### Steps for Mixed Data Training:
+#### Steps for Mixed Data Training:
 
 1. Set augmentation-specific and other hyper-parameters from [Comic Experiment file](yolox/exp/comic_exp.py) or leave them as default.
 
@@ -238,7 +238,7 @@ Models                                                 | Manga109 | DCM772 | Com
 > python3 train_single_gpu.py -b <BATCH_SIZE> --fp16 -o -expn <EXPERIMENT_NAME> -ms <EITHER_xs_OR_xl> --head-mode <0_FOR_BOTH_1_FOR_FACE_2_FOR_BODY_ONLY> -cfg comic -c <SELF_SUPERVISED_WEIGHT_PTH_PATH>
 ```
 
-### Steps for Single Dataset Training:
+#### Steps for Single Dataset Training:
 
 1. Set augmentation-specific and other hyper-parameters from [Single Dataset Experiment file](yolox/exp/single_dataset_exp.py) or leave them as default.
 
@@ -250,7 +250,7 @@ Models                                                 | Manga109 | DCM772 | Com
 
 ## Evaluation Instructions
 
-#### Required Datasets:
+### Required Datasets:
 
 In addition to the datasets in the **Stage-3: Fine-tuning with Annotated Drawing Data** subsection, you can download [eBDtheque](https://ebdtheque.univ-lr.fr/) and set the correct file path in [Base Experiment file](yolox/exp/base_exp.py).
 

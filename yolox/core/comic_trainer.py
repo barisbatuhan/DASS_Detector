@@ -46,9 +46,7 @@ class ComicTrainer(BaseTrainer):
             
             with torch.cuda.amp.autocast(enabled=self.amp_training):
 
-                foutputs = self.model(inps, targets, mode=1, 
-                                      boost_ratio=[-1, -1], 
-                                      boost_thold=[-1, -1])
+                foutputs = self.model(inps, targets, mode=1)
 
             loss = foutputs["total_loss"]
     
@@ -85,9 +83,7 @@ class ComicTrainer(BaseTrainer):
                 
                 with torch.cuda.amp.autocast(enabled=self.amp_training):
                 
-                    boutputs = self.model(inps, targets, mode=2,  
-                                          boost_ratio=[-1, -1], 
-                                          boost_thold=[-1, -1])
+                    boutputs = self.model(inps, targets, mode=2)
             
                 loss = boutputs["total_loss"]
     

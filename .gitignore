@@ -21,3 +21,5 @@ __pycache__
 ####################################
 
 weights/*.pth
+YOLOX_outputs
+YOLOX_outputs/*

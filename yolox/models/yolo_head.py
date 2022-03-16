@@ -95,7 +95,7 @@ class YOLOXHead(nn.Module):
             b.data.fill_(-math.log((1 - prior_prob) / prior_prob))
             conv.bias = torch.nn.Parameter(b.view(-1), requires_grad=True)
 
-    def forward(self, xin, labels=None, imgs=None, boost_thold=0, boost_face=False):
+    def forward(self, xin, labels=None, imgs=None):
         
         reg_outputs, obj_outputs  = [], []
         
@@ -125,9 +125,7 @@ class YOLOXHead(nn.Module):
             return self.loss_fn(imgs=imgs, labels=labels, 
                                 reg_preds=reg_outputs, 
                                 obj_preds=obj_outputs,
-                                outputs=outputs, 
-                                boost_thold=boost_thold, 
-                                boost_face=boost_face,
+                                outputs=outputs,
                                 inp_type=xin[0].type())
         
         else:

@@ -31,7 +31,6 @@ class UnsupervisedExp(BaseExp):
         self.multiscale_range = 5
 
         self.train_data_dir = {
-            "weekly_pack": self.face_data_dir["weekly_pack"],
             "icf": self.face_data_dir["icf_train_imgs"],
             "m109": os.path.join(self.face_data_dir["m109"], "images"),
             "comic": os.path.join(self.body_data_dir["comic"], "JPEGImages/"), 
@@ -83,12 +82,12 @@ class UnsupervisedExp(BaseExp):
         self.select_neg_random = False
         
         self.upper_conf_thold_start  = 0.5
-        self.upper_conf_thold_end    = 0.1
-        self.upper_conf_thold_step   = 0.0002
+        self.upper_conf_thold_end    = 0.5
+        self.upper_conf_thold_step   = 0.0
         
         self.lower_conf_thold_start  = 0.5
-        self.lower_conf_thold_end    = 0.9
-        self.lower_conf_thold_step   = 0.0002
+        self.lower_conf_thold_end    = 0.5
+        self.lower_conf_thold_step   = 0.0
         
         self.upper_conf_thold = self.upper_conf_thold_start
         self.lower_conf_thold = self.lower_conf_thold_start

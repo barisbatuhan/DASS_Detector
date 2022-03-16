@@ -81,10 +81,7 @@ class UnsupervisedTrainer(BaseTrainer):
                 target], dim=-1)
         
         return target, valid_indices
-    
-      
-#     def after_iter(self):
-#         super().after_iter(print_with_interval=False)
+
     
     def train_one_iter(self):
         
